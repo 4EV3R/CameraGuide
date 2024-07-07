@@ -1,16 +1,7 @@
---░░██╗██╗███████╗██╗░░░██╗██████╗░██████╗░
---░██╔╝██║██╔════╝██║░░░██║╚════██╗██╔══██╗
---██╔╝░██║█████╗░░╚██╗░██╔╝░█████╔╝██████╔╝
---███████║██╔══╝░░░╚████╔╝░░╚═══██╗██╔══██╗
---╚════██║███████╗░░╚██╔╝░░██████╔╝██║░░██║
---░░░░░╚═╝╚══════╝░░░╚═╝░░░╚═════╝░╚═╝░░╚═╝
-
-fx_version 'bodacious' 
+fx_version 'cerulean' 
 game 'gta5'
-
-author 'Sinan Abi#6391'
-description 'Camera Guide script by Sinan Abi'
--- stuur me dm in discord als je wat wilt vragen of in call wilt.
+author '@sinan_abi'
+description 'Camera Guide script by 4EV3R - Development'
 
 client_scripts {
     'client.lua',
