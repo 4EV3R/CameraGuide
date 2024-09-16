@@ -112,10 +112,17 @@ local function setupScaleform(scaleform, BRString, button)
 end
 
 Citizen.CreateThread(function()
-    while true do Citizen.Wait(0)
-        if Vdist(GetEntityCoords(PlayerPedId()), Config.MarkerLoc) < 100.0 then
+    while true do 
+	Citizen.Wait(0)
+	local InZone = false
+	local distance = #(GetEntityCoords(PlayerPedId()) - Config.MarkerLoc
+
+        if distance < 105.0 then
+		InZone = true
+	end
+        if distance < 100.0 then
             DrawMarker(32, Config.MarkerLoc, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 0, 130, 200, 200, true, true, 2, true, false, false, false)
-            if Vdist(GetEntityCoords(PlayerPedId()), Config.MarkerLoc) < 2.0 then
+            if #(GetEntityCoords(PlayerPedId()) - Config.MarkerLoc) < 2.0 then
                 enterForm = setupScaleform("instructional_buttons", "View Guide", 38)
                 DrawScaleformMovieFullscreen(enterForm, 255, 255, 255, 255, 0)
                 if IsControlJustReleased(2, 38) then
@@ -123,5 +130,10 @@ Citizen.CreateThread(function()
                 end
             end
         end
+	if InZone then
+		Citizen.Wait(0)
+	else
+		Citizen.Wait(1000)
+	end
     end
 end)
